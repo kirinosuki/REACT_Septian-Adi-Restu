@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Product</title>
+  </head>
+  <body>
+    <h1>Create Product</h1>
+    <h2>Detail Product</h2>
+    <form action="#" method="POST">
+      <label for="Category">Product Category :</label><br />
+      <input required />
+    </form>
+    <form>
+      <label for="product">Product Name: </label><br />
+      <select class="form-select form-select-lg mb3" name="nutrisi" required>
+        <option selected></option>
+        <option value="karbohidrat">Carbohydrates</option>
+        <option value="protein">Protein</option>
+        <option value="lemak">Vitamin</option></select
+      ><br />
+
+      <label for="Fresh">Product Fresheness : </label><br />
+      <input type="radio" name="warna" id="kuning" value="kuning" /> Brand New <input type="radio" name="warna" id="hijau" value="hijau" /> Second Hank <input type="radio" name="warna" id="biru" value="biru" /> Refurbished
+
+      <p>Image of Product <button>Choose File</button> No file chosen</p>
+
+      <label>Additional description</label><br />
+      <textarea id="largeTextarea" name="largeTextarea" rows="10" cols="50" required></textarea><br />
+
+      <label for="numericInput">Product price:</label><br>
+      <input type="number" id="numericInput" name="numericInput" placeholder="$100" required />
+    </form>
+    <button>Submit</button>
+  </body>
+</html>
