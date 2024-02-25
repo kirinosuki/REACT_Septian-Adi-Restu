@@ -1,5 +1,3 @@
-##Rangkuman Introduction FE
-
 Repository ini berfungsi sebagai panduan lengkap bagi pengembang front end, mencakup bahasa, alat, dan konsep-konsep penting yang diperlukan untuk membangun antarmuka web yang menarik.
 
 1.Bahasa Front End yang Penting: Penguasaan HTML, CSS, dan JavaScript sangatlah penting bagi pengembang front end yang ingin membuat pengalaman pengguna yang lebih baik.
