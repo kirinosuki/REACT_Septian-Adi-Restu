@@ -1,4 +1,4 @@
-#Rangkuman Introduction FE
+##Rangkuman Introduction FE
 
 Repository ini berfungsi sebagai panduan lengkap bagi pengembang front end, mencakup bahasa, alat, dan konsep-konsep penting yang diperlukan untuk membangun antarmuka web yang menarik.
 
