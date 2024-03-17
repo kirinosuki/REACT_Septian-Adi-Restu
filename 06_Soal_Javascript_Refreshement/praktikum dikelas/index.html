@@ -1,14 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
-  <script>
-    var pilot = "toni stark";
-    console.log(pilot);
-    console.error(pilot)
-  </script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tabel</title>
+</head>
+
+<style>
+    .container {
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2>Form Barang</h2>
+        <form id="barangForm">
+            <label for="nama">Nama Barang:</label><br>
+            <input type="text" id="nama" name="nama"><br>
+            <label for="harga">Harga Barang:</label><br>
+            <input type="text" id="harga" name="harga"><br><br>
+            <button type="button" onclick="tambahBarang()">Tambah Barang</button>
+        </form>
+
+        <table id="tabelBarang">
+            <tr>
+                <th>Nama Barang</th>
+                <th>Harga Barang</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("tabelBarang").style.display = "none";
+
+        function tambahBarang() {
+            let nama = document.getElementById("nama").value;
+            let harga = document.getElementById("harga").value;
+
+            if (nama === '' || harga === '') {
+                alert("Harap isi semua kolom.");
+                return;
+            }
+
+            // Validasi panjang nama barang
+            if (nama.length < 6 || nama.length > 25) {
+                alert("Nama barang harus terdiri dari 6 hingga 25 karakter.");
+                return;
+            }
+
+            // Validasi harga barang harus angka
+            if (isNaN(harga)) {
+                alert("Harga barang harus berupa angka.");
+                return;
+            }
+
+            let table = document.getElementById("tabelBarang");
+            let row = table.insertRow(-1);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+
+            cell1.innerHTML = nama;
+            cell2.innerHTML = harga;
+
+            table.style.display = "table";
+
+            document.getElementById("nama").value = "";
+            document.getElementById("harga").value = "";
+
+            // Menambahkan warna merah pada h2 Form Barang setelah barang ditambahkan
+            document.querySelector('h2').style.color = "red";
+        }
+    </script>
+</body>
+
 </html>

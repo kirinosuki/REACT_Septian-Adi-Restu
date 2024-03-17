@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+nav > div > a {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.navbar-nav > li > a {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.active {
+  background-color: rgb(0, 106, 255);
+  color: white !important;
+  border-radius: 5px;
+}
+
+img {
+  max-height: 100px;
+  width: auto;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Choose File';
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.custom-file-input:hover::before {
+  background: #0056b3;
+  border-color: #0056b3;
+}
+.custom-file-input:active::before {
+  background: #0056b3;
+  border-color: #0056b3;
+}
+.submit-size {
+  width: 100%;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 5px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: none;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
