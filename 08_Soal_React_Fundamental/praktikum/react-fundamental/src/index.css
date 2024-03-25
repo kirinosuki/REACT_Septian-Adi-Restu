@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  font-family: 'Roboto';
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #0D6EFD;
+}
