@@ -1,125 +1,82 @@
-// Variabel global untuk menyimpan status konfirmasi
-let isConfirmed = false;
+(() => {
+  "use strict";
 
-document.addEventListener('DOMContentLoaded', function () {
-  let form = document.querySelector('form');
-  let isValid = false;
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll(".needs-validation");
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
+  // Loop over them and prevent submission
+  Array.from(forms).forEach((form) => {
+      form.addEventListener(
+          "submit",
+          (event) => {
+              let name = document.querySelector("#product-name").value;
+              let category = document.querySelector("#product-category").value;
+              let image = document.querySelector("#product-image").value;
+              let freshnesss = document.querySelectorAll(
+                  'input[name="freshness"]'
+              );
+              let selectFreshness = "";
+              let description = document.querySelector(
+                  "#product-description"
+              ).value;
+              let price = document.querySelector("#product-price").value;
 
-    const inputs = form.querySelectorAll('input, textarea, select');
+              freshnesss.forEach((freshness) => {
+                  freshness.addEventListener("change", () => {
+                      selectFreshness = document.querySelector(
+                          'input[name="freshness"]:checked'
+                      ).value;
+                      console.log(selectGender);
+                  });
+              });
+              // Bila Field Product Name lebih dari 10 karakter
+              if (name.length > 10) {
+                  alert("Last Name must not exceed 25 characters.");
+              }
 
-    let isValid = true;
+              // Bila Field Product Name kosong
+              if (name.length == 0) {
+                  alert("Please enter a valid Product name.");
+              }
 
-    // Product Name
-    const productNameInput = document.getElementById('productName');
-    const productName = productNameInput.value;
+              // Bila Field Product Price kosong
+              if (price.length == 0) {
+                  alert("Please enter a valid Product price.");
+              }
 
-    const regex = /[!@#$%^&*(),.?":{}|<>]/;
+              // Bila Field Product Name mengandung symbol @#{}
+              if (
+                  name.includes("@") ||
+                  name.includes("#") ||
+                  name.includes("{") ||
+                  name.includes("}")
+              ) {
+                  alert("Name must not contain symbols.");
+              }
 
-    if (productName.length === 0) {
-      isValid = false;
-      document.getElementById('errorAlertProductName0').style.display = 'block';
-      setTimeout(function () {
-        document.getElementById('errorAlertProductName0').style.display = 'none';
-      }, 4000);
-    } else if (productName.length > 25) {
-      isValid = false;
-      document.getElementById('errorAlertProductName25').style.display = 'block';
-      setTimeout(function () {
-        document.getElementById('errorAlertProductName25').style.display = 'none';
-      }, 4000);
-    } else if (regex.test(productName)) {
-      isValid = false;
-      document.getElementById('errorAlertProductNameRegex').style.display = 'block';
-      setTimeout(function () {
-        document.getElementById('errorAlertProductNameRegex').style.display = 'none';
-      }, 4000);
-    } else {
-      document.getElementById('errorAlertProductName0').style.display = 'none';
-      document.getElementById('errorAlertProductName25').style.display = 'none';
-    }
+              // Bila Field Kosong
+              if (category == "") {
+                  alert("The Category field must be filled in");
+              }
+              if (freshnesss == "") {
+                  alert("The Freshness field must be filled in");
+              }
+              if (image == "") {
+                  alert("The Image field must be filled in");
+              }
+              if (description == "") {
+                  alert("The description field must be filled in");
+              }
 
-    const productPriceInput = document.getElementById('productPrice');
-    const productPrice = productPriceInput.value;
+              // UI Validasi Bootstrap
+              if (!form.checkValidity()) {
+                  event.preventDefault();
+                  event.stopPropagation();
+              }
 
-    if (productPrice.length === 0) {
-      isValid = false;
-      document.getElementById('errorAlertProductPrice0').style.display = 'block';
-      setTimeout(function () {
-        document.getElementById('errorAlertProductPrice0').style.display = 'none';
-      }, 3000);
-    } else {
-      document.getElementById('errorAlertProductPrice0').style.display = 'none';
-    }
-
-    const productImageInput = document.getElementById('productImage');
-    const productImage = productImageInput.files[0];
-
-    if (!productImage) {
-      isValid = false;
-      document.getElementById('errorAlertProductImage0').style.display = 'block';
-      setTimeout(function () {
-        document.getElementById('errorAlertProductImage0').style.display = 'none';
-      }, 2000);
-    } else {
-      document.getElementById('errorAlertProductImage0').style.display = 'none';
-    }
-
-    const additionalDescriptionInput = document.getElementById('additionalDescription');
-    const additionalDescription = additionalDescriptionInput.value;
-
-    if (additionalDescription.length === 0) {
-      isValid = false;
-      document.getElementById('errorAlertAdditionalDescription0').style.display = 'block';
-      setTimeout(function () {
-        document.getElementById('errorAlertAdditionalDescription0').style.display = 'none';
-      }, 1000);
-    } else {
-      document.getElementById('errorAlertAdditionalDescription0').style.display = 'none';
-    }
-
-    inputs.forEach(function (input) {
-      if (input.hasAttribute('required') && !input.value && input.type !== 'file') {
-        isValid = false;
-      }
-      if (input.type === 'file' && !input.files.length) {
-        isValid = false;
-      }
-      if (input.tagName.toLowerCase() === 'textarea' && !input.value.trim()) {
-        isValid = false;
-      }
-    });
-
-    if (!isValid) {
-      document.getElementById('errorAlert').style.display = 'block';
-      document.getElementById('successAlert').style.display = 'none';
-      console.log(isValid);
-      setTimeout(function () {
-        document.getElementById('errorAlert').style.display = 'none';
-      }, 1000);
-    } else {
-      document.getElementById('errorAlert').style.display = 'none';
-      document.getElementById('successAlert').style.display = 'block';
-      console.log(isValid);
-      setTimeout(function () {
-        document.getElementById('successAlert').style.display = 'none';
-        setTimeout(function () {
-          window.location.reload();
-        }, 500);
-      }, 500);
-    }
+              form.classList.add("was-validated");
+          },
+          false
+      );
   });
-
-  document.getElementById('submitModal').addEventListener('click', function () {
-    isConfirmed = true;
-
-    if (isConfirmed && isValid) {
-      form.submit();
-    }
-  });
-});
-function changeText(text) {
-  document.querySelector('.dropdown-toggle').innerText = text;
-}
+})();
