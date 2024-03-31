@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: Poppins;
+}
+
+body {
+    background-color: #304258;
+}
+
+nav {
+    background-color: white;
+}
+
+.btn-custom-1 {
+    background-color: #FBA834 !important;
+    color: #fff !important;
+}
+
+.btn-custom-2 {
+    background-color: #fff !important;
+    border: 1px solid #387ADF !important;
+    color: #387ADF !important;
+}
+
+.btn-custom-1:hover {
+    filter: brightness(80%);
+    transition: 0.2s;
+}
+
+.btn-custom-2:hover {
+    background-color: #387ADF !important;
+    color: #fff !important;
+    transition: 0.2s;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 24px;
+    color: #304258;
+    text-decoration: none;
+    outline: none;
+}
+
+.nav-link {
+    font-weight: 400;
+    font-size: 16px;
+    color: #387ADF !important;
+}
+
+.nav-link:hover {
+    filter: brightness(80%);
+}
+
+#hero {
+    height: 100vh;
+}
+
+.hero-heading {
+    font-size: 28px;
+    line-height: 2.5rem;
+    letter-spacing: 0.025em;
+    color: #374151;
+}
+
+.hero-caption {
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0.1px;
+    color: #6b7280;
+}
+
+
+#about {
+    padding: 80px 0px;
+}
+
+.main-title > h1 {
+    font-size: 24px;
+    line-height: 36px;
+    color: #387ADF;
+    letter-spacing: 0.025em;
+    font-weight: 500;
+}
+
+.main-title > p {
+    font-size: 14px;
+    color: #999aa4;
+    line-height: 28px;
+}
+
+
+#projects {
+    padding: 80px 0px;
+}
+
+.project-list > h1{
+    font-size: 16px;
+    color: #374151;
+    line-height: 24px;
+}    
+
+.project-list > p {
+    font-size: 14px;
+    color: #999aa4;
+}
+
+#contact {
+    padding: 80px 0px;
+}
+
+#footer {
+    padding: 80px 0px;
+}
+
+.brand-name {
+    font-size: 28px;
+}
+
+.brand-desc {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 24px;
+    margin-block-end: 0px;
+}
+
+.foot-title {
+    font-size: 16px;
+    line-height: 28px;
+    color: #374151;
+}
+
+#menu-footer > ul {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.foot-link {
+    font-size: 14px;
+    line-height: 24px;
+    color: #6b7280;
+}
+
+.foot-link:hover {
+    color: brown;
+    transition: 0.2s;
+}
+
+#address-footer > div > p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 24px;
+    margin-block-end: 0px;
+}
+
+@media only screen and (min-width: 992px) {
+    .hero-heading {
+        font-size: 36px;
+        line-height: 3rem;
+    }
+
+    .hero-caption {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .main-title > p {
+        font-size: 16px;
+    }
+
+    .brand-desc {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    
+    .foot-title {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .foot-link {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    #address-footer > div > p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
