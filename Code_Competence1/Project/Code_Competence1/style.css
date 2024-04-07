@@ -4,6 +4,7 @@
     font-family: Poppins;
 }
 
+
 body {
     background-color: #304258;
 }
@@ -56,6 +57,10 @@ nav {
     height: 100vh;
 }
 
+#img1 {
+    width: 70%;
+    height: 100%;
+}
 .hero-heading {
     font-size: 28px;
     line-height: 2.5rem;
@@ -89,21 +94,6 @@ nav {
     line-height: 28px;
 }
 
-
-#projects {
-    padding: 80px 0px;
-}
-
-.project-list > h1{
-    font-size: 16px;
-    color: #374151;
-    line-height: 24px;
-}    
-
-.project-list > p {
-    font-size: 14px;
-    color: #999aa4;
-}
 
 #contact {
     padding: 80px 0px;
