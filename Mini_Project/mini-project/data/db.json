@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald"
+    },
+    {
+      "id": "2",
+      "title": "1984",
+      "author": "George Orwell"
+    },
+    {
+      "id": "3",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee"
+    },
+    {
+      "id": 4,
+      "title": "New Book",
+      "author": "Author Name"
+    }
+  ],
+  "borrowedBooks": [
+    { "id": 1, "bookId": 1, "borrower": { "name": "John Doe", "email": "john@example.com" } },
+    { "id": 2, "bookId": 2, "borrower": { "name": "Jane Smith", "email": "jane@example.com" } }
+  ]
+}
