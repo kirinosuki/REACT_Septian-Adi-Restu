@@ -10,7 +10,7 @@ function AdminDashboard() {
   const navigate = useNavigate();
 
   console.log(books);
-  
+
   useEffect(() => {
     fetchBooks();
     fetchBorrowedBooks();
@@ -22,7 +22,10 @@ function AdminDashboard() {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch('http://localhost:3001/books');
+      const response = await fetch('https://6645b754b8925626f892d99c.mockapi.io/books');
+      if (!response.ok) {
+        throw new Error('Failed to fetch books');
+      }
       const data = await response.json();
       setBooks(data);
     } catch (error) {
@@ -32,7 +35,7 @@ function AdminDashboard() {
 
   const fetchBorrowedBooks = async () => {
     try {
-      const response = await fetch('http://localhost:3001/borrowedBooks');
+      const response = await fetch('https://6645b754b8925626f892d99c.mockapi.io/borrowedbooks');
       const data = await response.json();
       setBorrowedBooks(data);
     } catch (error) {
@@ -42,7 +45,7 @@ function AdminDashboard() {
 
   const deleteBorrowedBook = async (bookId) => {
     try {
-      const response = await fetch(`http://localhost:3001/borrowedBooks/${bookId}`, {
+      const response = await fetch(`https://6645b754b8925626f892d99c.mockapi.io/borrowedbooks/:id`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -56,7 +59,7 @@ function AdminDashboard() {
 
   const updateBorrowedBook = async (updatedBorrowedBook) => {
     try {
-      const response = await fetch(`http://localhost:3001/borrowedBooks/${updatedBorrowedBook.id}`, {
+      const response = await fetch(`https://6645b754b8925626f892d99c.mockapi.io/borrowedbooks/:id`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -71,7 +74,7 @@ function AdminDashboard() {
       console.error('Error updating borrowed book:', error);
     }
   };
-
+  console.log(books)
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>

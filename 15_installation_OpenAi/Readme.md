@@ -1,0 +1,1 @@
+Mengintegrasikan OpenAI API dengan aplikasi React memungkinkan Anda untuk memanfaatkan kemampuan pemrosesan bahasa alami yang canggih dari OpenAI, seperti menghasilkan teks, menjawab pertanyaan, dan banyak lagi.
